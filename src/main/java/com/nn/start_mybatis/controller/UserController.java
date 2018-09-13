@@ -32,13 +32,10 @@ public class UserController {
         try {
             User user = userService.getUserById(id);
             r.setResult(user);
-
             r.setStatus("ok");
 
         } catch (Exception e) {
             r.setResult(e.getClass().getName() + ":" + e.getMessage());
-
-
             r.setStatus("error");
             e.printStackTrace();
         }

@@ -4,10 +4,29 @@ package com.nn.start_mybatis.vo;
 public class JsonResult {
 
 
+
+
+
     private String status = null;
 
 
     private Object result = null;
+
+
+    public static JsonResult getSuccess(Object result){
+        JsonResult r = new JsonResult();
+        r.setStatus("SUCCESS");
+        r.setResult(result);
+        return r;
+
+    }
+
+    public static JsonResult getFailed(Object errInfo){
+        JsonResult r = new JsonResult();
+        r.setStatus("err");
+        r.setResult(errInfo);
+        return r;
+    }
 
 
     public JsonResult status(String status) {
