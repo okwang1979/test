@@ -1,6 +1,7 @@
-package com.nn.start_mybatis.com.nn.start_mybatis.controller;
+package com.nn.start_mybatis.controller;
 
 import com.nn.start_mybatis.service.IUserService;
+import com.nn.start_mybatis.vo.ContextValue;
 import com.nn.start_mybatis.vo.JsonResult;
 import com.nn.start_mybatis.vo.User;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,6 +21,8 @@ public class UserController {
     @Autowired
     public IUserService userService;
 
+    @Autowired
+    private ContextValue contextValue;
 
     @RequestMapping(value = "user/{id}", method = RequestMethod.GET)
 
@@ -29,10 +32,12 @@ public class UserController {
         try {
             User user = userService.getUserById(id);
             r.setResult(user);
+
             r.setStatus("ok");
 
         } catch (Exception e) {
             r.setResult(e.getClass().getName() + ":" + e.getMessage());
+
 
             r.setStatus("error");
             e.printStackTrace();
@@ -40,6 +45,13 @@ public class UserController {
         return ResponseEntity.ok(r);
     }
 
+    @RequestMapping(value = "username")
+    public ResponseEntity<JsonResult> getPropertiesValue() {
+        JsonResult r = new JsonResult();
+        r.setResult(contextValue.getName());
+        r.setStatus("ok");
+        return ResponseEntity.ok(r);
+    }
 
 
 }

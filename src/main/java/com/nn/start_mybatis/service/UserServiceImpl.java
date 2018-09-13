@@ -28,7 +28,7 @@ public class UserServiceImpl implements IUserService {
 
     @Override
     public int delUser(int id) {
-        return this.userDao.del(id);
+        return this.userDao.del();
 
     }
 }
