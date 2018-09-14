@@ -1,6 +1,6 @@
 package com.nn.start_mybatis.service;
 
-import com.nn.start_mybatis.vo.User;
+import com.nn.start_mybatis.entity.User;
 
 public interface IUserService {
 

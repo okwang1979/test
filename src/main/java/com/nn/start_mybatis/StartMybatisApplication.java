@@ -6,7 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.PropertySource;
 
 @SpringBootApplication
-@MapperScan("com.nn.start_mybatis.dao")
+@MapperScan("com.nn.start_mybatis.dao.mapper")
 @PropertySource(value={"classpath:/config.properties"},encoding = "UTF-8")
 public class StartMybatisApplication {
 

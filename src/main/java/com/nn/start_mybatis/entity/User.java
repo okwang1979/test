@@ -1,4 +1,4 @@
-package com.nn.start_mybatis.vo;
+package com.nn.start_mybatis.entity;
 
 import java.util.Date;
 

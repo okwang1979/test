@@ -1,9 +1,9 @@
 package com.nn.start_mybatis.controller;
 
 import com.nn.start_mybatis.service.IUserService;
-import com.nn.start_mybatis.vo.ContextValue;
-import com.nn.start_mybatis.vo.JsonResult;
-import com.nn.start_mybatis.vo.User;
+import com.nn.start_mybatis.entity.ContextValue;
+import com.nn.start_mybatis.entity.JsonResult;
+import com.nn.start_mybatis.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.http.ResponseEntity;

@@ -1,6 +1,6 @@
 package com.nn.start_mybatis.controller;
 
-import com.nn.start_mybatis.vo.JsonResult;
+import com.nn.start_mybatis.entity.JsonResult;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.converter.StringHttpMessageConverter;

@@ -1,7 +1,7 @@
 package com.nn.start_mybatis.service;
 
-import com.nn.start_mybatis.dao.UserDao;
-import com.nn.start_mybatis.vo.User;
+import com.nn.start_mybatis.dao.mapper.UserMapper;
+import com.nn.start_mybatis.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -9,26 +9,26 @@ import org.springframework.stereotype.Service;
 public class UserServiceImpl implements IUserService {
 
     @Autowired
-    private UserDao userDao;
+    private UserMapper userMapper;
 
     @Override
     public User getUserById(Integer id) {
-        return userDao.getUserById(id);
+        return userMapper.getUserById(id);
     }
 
     @Override
     public int saveOrUpdate(User user) {
         if (user.getId() == 0) {
-            return userDao.add(user);
+            return userMapper.add(user);
         } else {
-            return userDao.update(user.getId(), user);
+            return userMapper.update(user.getId(), user);
         }
 
     }
 
     @Override
     public int delUser(int id) {
-        return this.userDao.del(id);
+        return this.userMapper.del(id);
 
     }
 }
