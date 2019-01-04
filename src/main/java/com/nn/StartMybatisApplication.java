@@ -1,4 +1,4 @@
-package com.nn.start_mybatis;
+package com.nn;
 
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;

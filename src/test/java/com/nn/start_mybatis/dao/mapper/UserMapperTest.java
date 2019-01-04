@@ -26,10 +26,49 @@ public class UserMapperTest {
     @Test
     @Rollback(true)
     public void getUserById(){
-        User user =  userMapper.getUserById(1);
-        Assert.assertNotNull(user);
-        Assert.assertEquals(user.getId(),1);
+        baseTest(1);
 
+
+    }
+    @Test
+    @Rollback
+    public void add(){
+        User addUser = new User();
+        addUser.setUsername("AddUser");
+        addUser.setAge(10);
+        int id = userMapper.add(addUser);
+        baseTest(id);
+    }
+
+    @Test
+    @Rollback
+    public void update(){
+        User addUser = new User();
+        addUser.setUsername("AddUser");
+        addUser.setAge(10);
+        int id = userMapper.add(addUser);
+        addUser.setId(id);
+        userMapper.update(id,addUser);
+
+        User user = userMapper.getUserById(id);
+
+        Assert.assertEquals(user.getUsername(),"AddUser");
+
+
+    }
+
+    @Test
+    @Rollback
+    public void del(){
+        User user = userMapper.getUserById(1);
+        int delId = userMapper.del(user.getId());
+        Assert.assertEquals(delId,1);
+    }
+
+    private void  baseTest(int id){
+        User user =  userMapper.getUserById(id);
+        Assert.assertNotNull(user);
+        Assert.assertEquals(user.getId(),id);
     }
 
 //
